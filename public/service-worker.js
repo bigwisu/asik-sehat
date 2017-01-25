@@ -28,7 +28,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    const url = new (event.request.url);
+    const url = event.request.url;
     const imgUrl = 'https://firebasestorage.googleapis.com';
     if (url.startsWith(self.location.origin) || url.startsWith(imgUrl)) {
         event.respondWith(
