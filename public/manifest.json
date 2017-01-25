@@ -1,0 +1,16 @@
+{
+ "name": "Asik Sehat!",
+ "start_url": "/",
+ "scope": "/",
+ "display": "standalone",
+ "theme_color": "#bd0610",
+ "background_color": "#EEE",
+ "icons": [
+  {
+   "src": "/android-icon-192x192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "density": "4.0"
+  }
+ ]
+}
