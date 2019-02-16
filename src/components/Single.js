@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+
 import Photo from './Photo';
 import Comments from './Comments';
 
-export default class Single extends React.Component {
+const mapStateToProps = (state) => {
+  return {
+      posts: state.posts,
+      comments: state.comments
+  }
+}
+
+class Single extends Component {
     render() {
-        const { postId } = this.props.params;
+        const { postId } = this.props.match.params;
 
         const i = this.props.posts.findIndex((post) => post.code === postId);
         const post = this.props.posts[i];
 
-        const postComments = this.props.comments[postId] || [];
+        const postComments =  this.props.comments[postId] || [];
 
         return (
             <div className="single-photo">
@@ -19,3 +28,6 @@ export default class Single extends React.Component {
         )
     }
 };
+
+
+export default connect(mapStateToProps)(Single)

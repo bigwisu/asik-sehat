@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import _ from 'lodash';
 
-const Comments = React.createClass({
+class Comments extends Component {
+    constructor(props){
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderComment = this.renderComment.bind(this);
+    }
+    
     renderComment(comment) {
         return (
             <div className="comment" key={comment[0]}>
                 <p>
                     <strong>{comment[1].user}</strong> {comment[1].text}
-                    <button className="remove-comment" onClick={this.props.removeComment.bind(null, this.props.params.postId, comment[0])}>&times;</button>
+                    <button className="remove-comment" onClick={console.log('TODO')}>&times;</button>
                 </p>
             </div>
         )
-    },
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        const { postId } = this.props.params;
+        const { postId } = this.props.match.params;
         const author = this.refs.author.value;
         const comment = this.refs.comment.value;
-        this.props.addComment(postId, author, comment);
+        // TODO this should work with redux actions
+        // this.props.addComment(postId, author, comment);
         this.refs.commentForm.reset();
-    },
+    }
+
     render() {
-        const comments = Object.entries(this.props.postComments);
-        // const comments = _.toPairs(this.props.postComments); //podho ae...
+        const comments = _.toPairs(this.props.postComments);
         return (
             <div className="comments">
                 {comments.map(this.renderComment)}
@@ -34,6 +42,6 @@ const Comments = React.createClass({
             </div>
         )
     }
-});
+};
 
 export default Comments;
