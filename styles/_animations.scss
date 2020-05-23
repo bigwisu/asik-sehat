@@ -1,0 +1,20 @@
+
+
+$offsets: translateX(-50%) translateY(-50%);
+.likes-heart {
+  opacity: 0;
+  transition: all 0.5s;
+  transform: $offsets scale(5);
+  display: block;
+  &.like-enter {
+    transition: all 0.2s;
+    transform: $offsets scale(1);
+    opacity: 1;
+    &.like-enter-active {
+      transform: $offsets scale(5);
+    }
+  }
+  .like-leave-active {
+    display: none;
+  }
+}
