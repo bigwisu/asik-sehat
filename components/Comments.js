@@ -36,6 +36,7 @@ function Comments({
     return (
         <div className="comments">
             {comments.map(renderComment)}
+            {/* TODO: Form handling */}
             {/* <form ref="commentForm" className="comment-form" onSubmit={handleSubmit}>
                 <input type="text" ref="author" placeholder="author" ref={inputAuthor} />
                 <input type="text" ref="comment" placeholder="comment" ref={inputComment} />
