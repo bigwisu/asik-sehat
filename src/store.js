@@ -1,24 +1,20 @@
-// import { createStore, compose } from 'redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
-// import { syncHistoryWithStore } from 'react-router-redux';
-// import { browserHistory } from 'react-router';
+import rootReducer from './reducers/index'
 
-// import the root reducer
-import rootReducer from './reducers/index';
+import comments from './data/comments'
+import posts from './data/posts'
 
-//import app data
-import comments from './data/comments';
-import posts from './data/posts';
-
-// create an object for the default data
-const defaultState = {
-  posts,
-  comments
+const initialState = {
+    posts,
+    comments
 };
 
-const store = createStore(rootReducer, defaultState);
-
-// export const history = syncHistoryWithStore(browserHistory, store);
-
-export default store;
+export const initializeStore = (preloadedState = initialState) => {
+    return createStore(
+        rootReducer,
+        preloadedState,
+        composeWithDevTools(applyMiddleware())
+    )
+}

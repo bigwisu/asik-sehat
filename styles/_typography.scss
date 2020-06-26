@@ -1,0 +1,49 @@
+/*
+  Variables
+*/
+
+$blue: #125688;
+$red: #bd0610;
+$offwhite: #fafafa;
+$lightgrey: #EDEEED;
+$lightgray: $lightgrey;
+
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: merriweather, 'merriweatheritalic';
+  text-align: center;
+  font-weight: 100;
+  font-size: 8rem;
+  margin: 2rem 0;
+  letter-spacing: -1px;
+  text-shadow: 0px 4px 0 rgba(18, 86, 136, 0.11);
+  a {
+    color: $red;
+    text-decoration: none;
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'merriweatheritalic';
+  src: url('/fonts/ttf/Merriweather-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
