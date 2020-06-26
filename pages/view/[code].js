@@ -1,7 +1,8 @@
-import Head from 'next/head';
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Single from '../../components/Single'
 
-const Single = () => {
+const Code = () => {
     const router = useRouter()
     const { code } = router.query
 
@@ -10,9 +11,9 @@ const Single = () => {
             <Head>
                 <title>{code}</title>
             </Head>
-            <p>Post: {code}</p>
+            <Single code={code}/>
         </div>
     )
 }
 
-export default Single
+export default Code
