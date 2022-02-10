@@ -22,7 +22,7 @@
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "next": "^9.4.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "normalize-scss": "^7.0.1",
     "raven-js": "^3.27.0",
     "react": "^16.8.1",
